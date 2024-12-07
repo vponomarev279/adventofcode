@@ -1,0 +1,29 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@typescript-eslint/parser": "^8.17.0",
+    "typescript": "^5.7",
+    "typescript-eslint": "^8.17.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^18.19.67",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "lint": "eslint --max-warnings 0 'src/**/*.ts'",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "start": "ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
