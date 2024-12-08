@@ -7,7 +7,7 @@ const inputPath = path.resolve(__dirname, 'input.txt');
 function parseRules(str: string) {
   const rules: number[][] = [];
 
-  for (const ord of str.split('\n')) {
+  for (const ord of str.split('\n').filter((line) => line !== '')) {
     const [left, right] = ord.split('|');
     rules.push([Number(left), Number(right)]);
   }
@@ -18,7 +18,7 @@ function parseRules(str: string) {
 function parseUpdates(str: string) {
   const updates: number[][] = [];
 
-  for (const updateLine of str.split('\n')) {
+  for (const updateLine of str.split('\n').filter((line) => line !== '')) {
     updates.push(updateLine.split(',').map(Number));
   }
 

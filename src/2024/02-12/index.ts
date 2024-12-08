@@ -5,7 +5,10 @@ import { executeWithTiming } from '../../lib/measure.lib';
 const inputPath = path.resolve(__dirname, 'input.txt');
 
 function parseInput(input: string) {
-  const result = input.split('\n').map((line) => line.split(' ').map(Number));
+  const result = input
+    .split('\n')
+    .filter((line) => line !== '')
+    .map((line) => line.split(' ').map(Number));
   result.pop();
 
   return result;

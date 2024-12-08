@@ -11,7 +11,7 @@ function makeMatrix(inp: string) {
   let startI = 0;
   let startJ = 0;
 
-  for (const line of inp.split('\n')) {
+  for (const line of inp.split('\n').filter((line) => line !== '')) {
     if (line.includes('^')) {
       startI = matrix.length;
       startJ = line.indexOf('^');
