@@ -74,9 +74,8 @@ function findLeftmostEmptySpaceStart(blocks: string[], minLength: number, end: n
   return -1;
 }
 
+
 function normalizeBlocksByFiles(blocks: string[]) {
-  // console.log({ blocks: blocks.join('') });
-  // const emptySpaces: Set<number> = new Set();
   let right = blocks.length - 1;
 
   while (right >= 0) {
@@ -92,7 +91,6 @@ function normalizeBlocksByFiles(blocks: string[]) {
       right -= 1;
     }
 
-    // blocks: string[], minLength: number, end: number
     const leftStart = findLeftmostEmptySpaceStart(blocks, rightCount, right + 1);
     if (leftStart !== -1) {
       for (let j = 0; j < rightCount; j++) {
@@ -101,41 +99,6 @@ function normalizeBlocksByFiles(blocks: string[]) {
       }
     }
   }
-
-  /*
-  while (right >= 0) {
-    let left = 0;
-    let leftCount = 0;
-    let rightCount = 0;
-
-    while (right >= 0 && blocks[right] === '.') {
-      right -= 1;
-    }
-
-    let currentRight = blocks[right];
-    while (right >= 0 && blocks[right] === currentRight) {
-      rightCount += 1;
-      right -= 1;
-    }
-
-    while (left < right && left < blocks.length && leftCount < rightCount) {
-      if (blocks[left] === '.') {
-        leftCount += 1;
-      } else {
-        leftCount = 0;
-      }
-
-      left += 1;
-    }
-
-    if (leftCount >= rightCount) {
-      for (let j = 0; j < rightCount; j++) {
-        blocks[left - leftCount + j] = blocks[right + rightCount - j];
-        blocks[right + rightCount - j] = '.';
-      }
-    }
-  }
-   */
 }
 
 function solvePart1(initialBlocks: string[]) {
