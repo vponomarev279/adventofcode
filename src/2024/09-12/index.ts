@@ -74,7 +74,6 @@ function findLeftmostEmptySpaceStart(blocks: string[], minLength: number, end: n
   return -1;
 }
 
-
 function normalizeBlocksByFiles(blocks: string[]) {
   let right = blocks.length - 1;
 
@@ -85,7 +84,7 @@ function normalizeBlocksByFiles(blocks: string[]) {
       right -= 1;
     }
 
-    let currentRight = blocks[right];
+    const currentRight = blocks[right];
     while (right >= 0 && blocks[right] === currentRight) {
       rightCount += 1;
       right -= 1;

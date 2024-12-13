@@ -21,7 +21,7 @@ function getAntennas(matrix: string[][]) {
           antennas.set(matrix[i][j], []);
         }
 
-        antennas.get(matrix[i][j])!.push([i, j]);
+        antennas.get(matrix[i][j])?.push([i, j]);
       }
     }
   }
@@ -98,12 +98,12 @@ function solvePart2(antennas: Map<string, number[][]>, matrix: string[][]) {
 
       while (isInBoundaries(matrix, upPair)) {
         antinodesSet.add(`${upPair[0]}:${upPair[1]}`);
-        upPair = getPrevAntinode(upPair[0], upPair[1], diffI, diffJ)
+        upPair = getPrevAntinode(upPair[0], upPair[1], diffI, diffJ);
       }
 
       while (isInBoundaries(matrix, downPair)) {
         antinodesSet.add(`${downPair[0]}:${downPair[1]}`);
-        downPair = getNextAntinode(downPair[0], downPair[1], diffI, diffJ)
+        downPair = getNextAntinode(downPair[0], downPair[1], diffI, diffJ);
       }
     }
   }
