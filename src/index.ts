@@ -13,6 +13,7 @@ import { main as day12 } from './2024/12-12';
 import { main as day13 } from './2024/13-12';
 import { main as day14 } from './2024/14-12';
 import { main as day15 } from './2024/15-12';
+import { main as day16 } from './2024/16-12';
 import { solve } from './lib/solver.lib';
 
 (async () => {
@@ -31,4 +32,5 @@ import { solve } from './lib/solver.lib';
   await solve('Day 13', day13);
   await solve('Day 14', day14);
   await solve('Day 15', day15);
+  await solve('Day 16', day16);
 })();
